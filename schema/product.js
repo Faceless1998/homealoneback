@@ -16,6 +16,7 @@ const PropertiesRU = new mongoose.Schema({
     type: String,
   },
 });
+//comment
 const PropertiesGE = new mongoose.Schema({
   prop: {
     type: String,
