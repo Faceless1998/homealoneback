@@ -1,0 +1,28 @@
+{
+  "name": "homealone-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EldarTarieladze/HomeAlone-Backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EldarTarieladze/HomeAlone-Backend/issues"
+  },
+  "homepage": "https://github.com/EldarTarieladze/HomeAlone-Backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "i": "^0.3.6",
+    "mongoose": "^5.13.4",
+    "path": "^0.12.7"
+  }
+}
