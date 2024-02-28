@@ -13,23 +13,24 @@ app.use(express.static(__dirname));
 const uri = BASE_URL;
 mongoose.connect(uri, {
   useNewUrlParser: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
   useUnifiedTopology: true,
 });
 
+const connection = mongoose.connection;
+connection.once("open", () => {
+  console.log("connection success");
+});
+
+// Define routes after connection is established
 {
-  const connection = mongoose.connection;
-  connection.once("open", () => {
-    console.log("connection success");
+  // Fix: admin panel
+  app.get("/", (req, res) => {
+    res.json("hello world");
   });
 
-  //fix: admin panel
-  app.get("/", (req, res) => {
-    res.json("hello world")
-  });
   const Admin = require("./router/admin");
   app.use("/api", Admin);
+
   const modifyProduct = require("./router/products");
   app.use("/products", modifyProduct);
 }
